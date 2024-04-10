@@ -1,0 +1,55 @@
+   <!--3 parties + timeline-->   
+    <div class="carousel mt-5 ml-3 mr-3 p-lg-5">
+        <div class="container main row mx-auto mb-5">
+            <div class="cards col-md-8">
+                    <div class="row row-cols-1 row-cols-md-2 g-4">
+                        {% for Infos in infos2  %}
+                            {% if Infos %}
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <img class="card-img-top img-fluid" src="{{ asset('uploads/' ~ Infos.image) }}" alt="{{ Infos.image }}" >
+                                        <!--<img src="/assets/images/av.webp" class="card-img-top img-fluid" alt="...">-->
+                                        <div class="card-body">
+                                            <h5 class="card-title mt-3">{{ Infos.title }}</h5>
+                                            <p class="card-content">{{ Infos.description | raw | slice(5, 120) }}</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <i class="fa-regular fa-clock"></i>
+                                            <small class="text-muted">{{ Infos.publishedAt | date('d-m-Y à H:i:s') }}</small>
+                                            <div class="icon">
+                                                <i class="fa-regular fa-bookmark"></i>
+                                                <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                                            </div>
+                                            <a href="{{ path('app_show_article_middle', {'id': Infos.id}) }}" class="btn btn-primary">Voir l'article</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="Timeline col-md-4 border border-2">
+                   <p class="infot">Fil Info</p>
+                  <div class="timeline">
+                    {% for Time in infos  %}
+                            {% if Time %}
+                                <div class="event">
+                                    <div class="date">{{ Time.publishedAt | date('d-m-Y à H:i:s') }}</div>
+                                    <img class="card-img-top img-fluid reduire-image" src="{{ asset('uploads/' ~ Time.image) }}" alt="{{ Time.image }}" >
+                                    <p>{{ Time.description | raw | slice(5, 121) }}</p>
+                                </div>
+                            {% endif %}
+                    {% endfor %}
+                    </div>
+                    <div class="d-grid">
+                        <button class="btn btn-primary" type="button">Toute L'actu</button>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="col-md-8">
+                    <div class="d-grid">
+                        <button class="btn2 btn-primary" type="button">Tout voir</button>
+                    </div>
+                </div>
+            </div>   

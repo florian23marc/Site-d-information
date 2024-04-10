@@ -1,0 +1,80 @@
+    <div class="main">
+        <div class="container mt-5 p-lg-4">
+            <div class="row">
+                <div class="col-md-6">
+                    {% for Infos1 in infos1 %}
+                        {% if Infos1 %}
+                            <div>
+                                <img class="card-img-top img-fluid" src="{{ asset('uploads/' ~ Infos1.image) }}" alt="{{ Infos1.image }}" >
+                                <!--<img src="/assets/images/war.jpg" class="card-img-top img-fluid" alt="...">-->
+                                <div class="card-body">
+                                    <h1>{{ Infos1.title }}</h1>
+                                    <p class="card-text fw-bolder">{{ Infos1.subtitle }}</p>
+                                    <h4 class="card-content">{{ Infos1.description | raw | slice(5, 120) }}</h4>
+                                </div>
+                                <div class="card-footer">
+                                    <i class="fa-regular fa-clock"></i>
+                                    <small class="text-muted">{{ Infos1.publishedAt | date('d-m-Y à H:i:s') }}</small>
+                                    <div class="icon">
+                                        <i class="fa-regular fa-bookmark"></i>
+                                        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                                    </div>
+                                    <a href="{{ path('app_show_article_grand', {'id': Infos1.id}) }}" class="btn btn-primary">Voir l'article</a>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+                <div class="col-md-6">
+                    <div class="row row-cols-1 row-cols-md-2 g-4">
+                        {% for Infos in infos %}
+                            {% if Infos.isAbonne %}
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <img class="card-img-top img-fluid" src="{{ asset('uploads/' ~ Infos.image) }}" alt="{{ Infos.image }}" >
+                                        <!--<img src="/assets/images/av.webp" class="card-img-top img-fluid" alt="...">-->
+                                        <div class="card-body">
+                                            <h5 class="card-title mt-3">{{ Infos.title }}</h5>
+                                            {#<p class="card-text fw-bolder">{{ Infos.description | raw }}</p>#}
+                                            <p class="card-content">{{ Infos.description | raw | slice(5, 120) }}</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <i class="fa-regular fa-clock"></i>
+                                            <small class="text-muted">{{ Infos.publishedAt | date('d-m-Y à H:i:s') }}</small>
+                                            <div class="icon">
+                                                <i class="fa-regular fa-bookmark"></i>
+                                                <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                                            </div>
+                                            <a href="{{ path('app_login') }}" class="btn btn-warning mt-3"> 0<sup>99</sup> | S'abonner</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% else %}
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <img class="card-img-top img-fluid" src="{{ asset('uploads/' ~ Infos.image) }}" alt="{{ Infos.image }}" >
+                                        <!--<img src="/assets/images/av.webp" class="card-img-top img-fluid" alt="...">-->
+                                        <div class="card-body">
+                                            <h5 class="card-title mt-3">{{ Infos.title }}</h5>
+                                            {#<p class="card-text fw-bolder">{{ Infos.description | raw }}</p>#}
+                                            <p class="card-content">{{ Infos.description | raw | slice(5, 120) }}</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <i class="fa-regular fa-clock"></i>
+                                            <small class="text-muted">{{ Infos.publishedAt | date('d-m-Y à H:i:s') }}</small>
+                                            <div class="icon">
+                                                <i class="fa-regular fa-bookmark"></i>
+                                                <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                                            </div>
+                                            <a href="{{ path('app_show_article', {'id': Infos.id}) }}" class="btn btn-primary mt-3"> Voir l'artcicle</a>
+                                        </div>
+                                    </div>
+                                </div> 
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

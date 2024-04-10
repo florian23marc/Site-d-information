@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Détails de l'article {% endblock %}  
+
+{% block body %}
+
+<div class="container mt-5 p-lg-5">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h1 class="mb-4">{{ showArticlesGrand.title }}</h1>
+            <p class="lead mb-4">{{ showArticlesGrand.subtitle }}</p>
+            <small class="text-muted">{{ showArticlesGrand.publishedAt | date('d-m-Y') }}</small>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <img class="card-img-top img-fluid rounded shadow-lg mb-5" src="{{ asset('uploads/' ~ showArticlesGrand.image) }}" alt="{{ showArticlesGrand.image }}">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <p>{{ showArticlesGrand.description | raw }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

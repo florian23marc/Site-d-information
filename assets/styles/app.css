@@ -1,3 +1,343 @@
-body {
-    background-color: skyblue;
+.container {
+    width: 90%;
+}
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 50px 15px 50px;
+    background-color:#070d5b;
+}
+
+.list1  {
+    color:white ;
+    display: flex;
+    list-style: none;
+    margin: 16px;
+}
+
+.list1 li{
+    display: flex;
+    justify-content: space-around;
+    margin-right: 10px;
+}
+.list1 a {
+    text-decoration: none;
+    color: white;
+}
+.list1 li  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.list1 li a.petit {
+    font-size: 0.7em; /* ou toute autre valeur de taille de police souhaitée */
+    text-align: center;
+}
+.list1 .guerre {
+    color: red;
+}
+.fa-circle-user{
+    font-size: 20px;
+}
+.list1 li a:hover .fa-circle-user {
+    color: red;
+}
+.list1 li a .fa-headphones {
+    margin-right: 5px; 
+}
+.list1 li a:hover .fa-headphones {
+    color: red;
+}
+.list1 li a .fa-display {
+    margin-right: 5px; 
+}
+
+.list1 li.red :hover {
+    color: red;
+}
+
+
+.links ul li:nth-child(13n){    
+    padding: 0 15px 0 5px;
+    border-left: 1px solid #FFF;
+}
+.links ul li:nth-child(14n){    
+    padding: 0 5px 0 15px;
+    border-right: 1px solid #FFF;
+}
+.links ul li:nth-child(4) a {
+    color: red;
+}
+
+
+/*.petit {
+    margin: 0px 15px 0px 15px;
+    border-right: 1px solid white;
+}
+.petit1 {
+    margin: 15px 15px 15px 15px;
+    border-right: 1px solid white;
+    margin-left: 3px;
+}*/
+
+/* partie en dessous de la navbar */
+
+.card1{
+    margin-left: 50px;
+    margin-top: 60px;
+}
+.main h1 {
+    margin-top: 7px;
+    background-color: red;
+    color: white;
+    width: 30%;
+    height: 10%;
+    padding: 10px; 
+    font-size: 15px;
+}
+.main h5 {
+    margin-top: 7px;
+    background-color: red;
+    color: white;
+    width: 60%;
+    /*height: 30%;
+    padding: 10px; */
+    font-size: 15px;
+}
+.card-content{
+    font-size: 15px;
+    color: grey;
+}
+
+.card-text{
+    color: #07244b;
+    font-size: 21px;
+}
+.icon{
+    float: right;
+    margin-right: 2px;
+    color: grey !important;
+}
+.fa-clock{
+    color: grey !important;
+}
+.isr {
+    container: fluid;
+    width: 100%;
+    height: 300px;
+}
+.stats{
+    display: flex;
+    color: white;
+    list-style: none;
+    justify-content: space-around;
+    font-size: 40px;
+}
+.time {
+    color: red;
+    font-weight: bold;
+}
+.part1 {
+    background-image: url('/assets/arbre.png'); /* Remplacez '/chemin/vers/votre/arbre.png' par le chemin réel de votre image */
+    background-size: cover;
+    background-position: center;
+    color: white; /* Ajoutez ceci pour assurer une meilleure lisibilité du texte sur l'image */
+}
+
+.stats li {
+    display: block;
+    margin-bottom: 10px;
+}
+/*Le carousel*/
+#carouselExampleControls {
+    background-color: #07244b; 
+    height: 500px;
+}
+
+
+.car{
+    color: white;
+    font-size: 35px;
+    text-decoration: underline red;
+    padding-bottom: 10px;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+.carousel-item .d-flex.justify-content-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Carousel des vidéos */
+
+.card1:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.50);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.card1 {
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+ /* that's the timeline*/
+
+ .timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+  }
+  .timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 5px;
+    background-color: #e3f57b;
+    transform: translateX(-70%);
+  }
+  .event {
+    position: relative;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  .event:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -8px;
+    width: 16px;
+    height: 16px;
+    background-color: #ff5c04;
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+  .date {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  /* Le Bouton en bas des cards */
+  .btn2  {
+    border-style:none !important;
+   background-color: #07244b !important;
+}
+
+.btn {
+    border-style: none !important;
+    background-color: #07244b !important;
+    color: white !important;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.btn:hover {
+    background-color: white !important;
+    color: #07244b !important;
+    border-color: #07244b !important;
+}
+  /* Le Footer */
+
+
+
+.footer {
+    background-color: #07244b;
+    height:350px;
+}
+.logo2 { 
+    width: 70% !important;
+    
+}
+
+.ul1 {
+    list-style: none;
+}
+
+.googi {
+    width: 75% !important;
+    list-style: border 1px solid white;
+}
+
+li a {
+    text-decoration: none;
+}
+
+/*@media (max-width: 768px;) {
+
+}*/
+
+.list1 {
+    color: white;
+    list-style: none;
+}
+
+.titre3 {
+    color: white;
+    font-size: 1.5rem;
+}
+
+ul {
+    list-style: none;    
+}
+ul li a {
+    color: gray;
+}
+ul li a:hover {   
+    text-decoration: none;
+    color: #fff;
+}
+
+.fa-regular .fa-brands {
+    font-size:5px ;
+    color: gray;
+}
+
+.fa-brands {
+    font-size: 21px;
+    color: gray;
+    margin-right: 3px; 
+    padding: 7px;
+    transition: background-color 0.3s ease-in-out;
+}
+.fa-brands:hover {
+    color: #f0f0f0; /* Changer la couleur de fond au survol */
+}
+.social-icons {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-icons i {
+    margin-right: 10px;
+}
+
+/* Ajout pour aligner les icônes verticalement avec le texte */
+.liste1 a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: grey;
+}
+
+/*la timeline */
+
+.reduire-image {
+    transform: scale(0.8); /* Réduire de 20% (1 - 0.2) */
+    transform-origin: top left; /* Optionnel: définir l'origine de la transformation */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.infot{
+    color: #07244b;
+    font-size: 35px;
+    margin-top: 7px;
 }
